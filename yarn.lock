@@ -86,6 +86,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@netlify/plugin-nextjs@npm:^5.7.2":
+  version: 5.7.2
+  resolution: "@netlify/plugin-nextjs@npm:5.7.2"
+  checksum: 10c0/0b0c6b5475be6dee552711b590d3f9cf43d162d820255920222568a221e943215963fb23a7fee367f7bd0c7459ec1f850ecdd8f9448415e832d310c9e28d2688
+  languageName: node
+  linkType: hard
+
 "@next/env@npm:14.2.13":
   version: 14.2.13
   resolution: "@next/env@npm:14.2.13"
@@ -862,6 +869,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "diginote@workspace:."
   dependencies:
+    "@netlify/plugin-nextjs": "npm:^5.7.2"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
