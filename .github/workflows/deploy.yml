@@ -30,9 +30,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Build project
-        run: yarn build
-
       - name: Deploy to Netlify
         id: netlify_deploy
         run: |
