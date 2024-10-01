@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import MainMenu from "@/components/menu/main-menu"
 
 export const metadata: Metadata = {
   title: "Diginote",
@@ -10,7 +11,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
       <body>
-        <div id='root'>{children}</div>
+        <div id='root'>
+          <MainMenu />
+          {children}
+        </div>
       </body>
     </html>
   )
