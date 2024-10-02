@@ -2,6 +2,9 @@ const paths = {
   goHome() {
     return "/"
   },
+  showNotebooks() {
+    return "/notebooks"
+  },
   showNotebook(notebookSlug: string) {
     return `/notebooks/${notebookSlug}`
   },
@@ -10,6 +13,9 @@ const paths = {
   },
   createNote(notebookSlug: string) {
     return `/notebooks/${notebookSlug}/new`
+  },
+  showProfile() {
+    return "/profile"
   },
 }
 
