@@ -1,4 +1,4 @@
-import MenuData from "@/dummyData/menu"
+import MenuData from "@/siteData/menu"
 import MenuItem from "./menu-item"
 
 import * as styles from "./main-menu.module.css"
