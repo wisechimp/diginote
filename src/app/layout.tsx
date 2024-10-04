@@ -7,13 +7,19 @@ export const metadata: Metadata = {
   description: "A digital notebook.",
 }
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+type LayoutProps = {
+  children: React.ReactNode
+}
+
+const RootLayout = ({ children }: LayoutProps) => {
   return (
     <html lang='en'>
       <body>
         <div id='root'>
-          <MainMenu />
-          {children}
+          <main>
+            <MainMenu />
+            {children}
+          </main>
         </div>
       </body>
     </html>
