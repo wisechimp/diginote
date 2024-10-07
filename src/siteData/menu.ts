@@ -1,6 +1,5 @@
-import { FaHome } from "react-icons/fa"
-import { MdManageAccounts } from "react-icons/md"
-import { SlNotebook } from "react-icons/sl"
+import { FaHome, FaUserCog } from "react-icons/fa"
+import { PiBooksFill } from "react-icons/pi"
 
 const MenuData = [
   {
@@ -11,12 +10,12 @@ const MenuData = [
   {
     title: "Notebooks",
     link: "/notebooks",
-    Icon: SlNotebook,
+    Icon: PiBooksFill,
   },
   {
     title: "Profile",
     link: "/profile",
-    Icon: MdManageAccounts,
+    Icon: FaUserCog,
   },
 ]
 
