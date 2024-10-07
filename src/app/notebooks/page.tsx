@@ -1,10 +1,10 @@
-import Link from "next/link"
+import NotebooksList from "@/components/notebook-list/notebook-list"
 
 const NotebooksPage = () => {
   return (
     <div>
       <h1>Notebooks</h1>
-      <Link href='/notebooks/toadslist'>A notebook</Link>
+      <NotebooksList />
     </div>
   )
 }

@@ -5,8 +5,12 @@ const paths = {
   showNotebooks() {
     return "/notebooks"
   },
-  showNotebook(notebookSlug: string) {
-    return `/notebooks/${notebookSlug}`
+  showNotebook(notebookTitle: string) {
+    let notebookSlug = notebookTitle
+    if (notebookTitle.includes(" ")) {
+      notebookSlug = notebookTitle.replace(" ", "-")
+    }
+    return `/notebooks/${notebookSlug.toLocaleLowerCase()}`
   },
   showNote(notebookSlug: string, noteId: string) {
     return `/notebooks/${notebookSlug}/${noteId}`
