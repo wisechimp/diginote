@@ -1,22 +1,17 @@
-// This will be removed when the slug is passed down by the Linking component
-"use client"
+import NoteList from "@/components/note-list/note-list"
 
-import Link from "next/link"
-import { useParams } from "next/navigation"
-
-/* type NotebookPageProps = {
+type NotebookPageProps = {
   params: {
     slug: string
   }
-} */
+}
 
-const NotebookPage = () => {
-  const params = useParams<{ slug: string }>()
+const NotebookPage = ({ params }: NotebookPageProps) => {
   const { slug } = params
   return (
     <div>
-      <h1>{`The ${slug} notebook`}</h1>
-      <Link href='/notebooks/toadslist/natterjack'>A notebook</Link>
+      <h1>{slug}</h1>
+      <NoteList />
     </div>
   )
 }

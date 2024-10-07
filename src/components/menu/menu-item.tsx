@@ -1,15 +1,20 @@
+import MenuItemType from "@/types/MenuItemType"
 import Link from "next/link"
+import styles from "./menu-item.module.css"
 
 type MenuItemProps = {
-  title: string
-  link: string
+  menuItem: MenuItemType
 }
 
-const MenuItem = ({ title, link }: MenuItemProps) => {
+const MenuItem = ({ menuItem }: MenuItemProps) => {
+  const { title, link, Icon } = menuItem
   return (
-    <div>
-      <Link href={link}>{title}</Link>
-    </div>
+    <Link href={link}>
+      <div className={styles.menuItemContainer}>
+        <Icon />
+        {`${title}`}
+      </div>
+    </Link>
   )
 }
 

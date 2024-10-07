@@ -8,8 +8,7 @@ const MainMenu = () => {
   return (
     <div className={styles.menuContainer}>
       {menuData.map((menuItem, i) => {
-        const { title, link } = menuItem
-        return <MenuItem key={`menu-item${i}`} title={title} link={link} />
+        return <MenuItem key={`menu-item${i}`} menuItem={menuItem} />
       })}
     </div>
   )
