@@ -1,3 +1,5 @@
+import { cleanUrl } from "./utils"
+
 const paths = {
   goHome() {
     return "/"
@@ -6,13 +8,10 @@ const paths = {
     return "/notebooks"
   },
   showNotebook(notebookTitle: string) {
-    let notebookSlug = notebookTitle
-    if (notebookTitle.includes(" ")) {
-      notebookSlug = notebookTitle.replace(" ", "-")
-    }
+    const notebookSlug = cleanUrl(notebookTitle)
     return `/notebooks/${notebookSlug.toLocaleLowerCase()}`
   },
-  showNote(notebookSlug: string, noteId: string) {
+  showNote(notebookSlug: string, noteId: number) {
     return `/notebooks/${notebookSlug}/${noteId}`
   },
   createNote(notebookSlug: string) {

@@ -1,11 +1,23 @@
+import notebook from "@/dummyData/notebook"
 import NoteCard from "./note-card"
 
-const NoteList = () => {
+type NoteListProps = {
+  slug: string
+  notebookId: number
+}
+
+const fetchNotebook = (notebookId: number) => {
+  console.log(notebookId)
+  return notebook
+}
+
+const NoteList = ({ slug, notebookId }: NoteListProps) => {
+  const notebookData = fetchNotebook(notebookId)
   return (
     <div>
-      <NoteCard title='Note One' />
-      <NoteCard title='Note Two' />
-      <NoteCard title='Note Three' />
+      {notebookData.map((note) => {
+        return <NoteCard key={note.id} slug={slug} data={note} />
+      })}
     </div>
   )
 }

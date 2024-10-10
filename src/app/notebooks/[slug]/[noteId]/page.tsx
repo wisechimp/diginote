@@ -1,20 +1,25 @@
-"use client"
+import notebook from "@/dummyData/notebook"
 
-import { useParams } from "next/navigation"
-
-/* type NotePageProps = {
+type NotePageProps = {
   params: {
-    slug: string
+    noteId: number
   }
-} */
+}
 
-const NotePage = () => {
-  const params = useParams<{ slug: string }>()
-  const { slug } = params
+const fetchNoteData = (noteId: number) => {
+  const noteData = notebook.find((note) => (note.id = noteId))
+  return noteData
+}
+
+const NotePage = ({ params }: NotePageProps) => {
+  const { noteId } = params
+  const data = fetchNoteData(noteId)
+
+  const { title, content } = data!
   return (
     <div>
-      <h1>{`The ${slug} notebook`}</h1>
-      Here are some notes about a netterjack toad
+      <h1>{title}</h1>
+      <p>{content}</p>
     </div>
   )
 }
