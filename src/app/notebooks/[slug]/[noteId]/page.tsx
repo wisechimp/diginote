@@ -8,14 +8,12 @@ type NotePageProps = {
 
 const fetchNoteData = (noteId: number) => {
   const noteData = notebook.find((note) => (note.id = noteId))
-  console.log(noteData)
   return noteData
 }
 
 const NotePage = ({ params }: NotePageProps) => {
   const { noteId } = params
   const data = fetchNoteData(noteId)
-  console.log(data)
 
   const { title, content } = data!
   return (

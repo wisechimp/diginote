@@ -11,8 +11,7 @@ const paths = {
     const notebookSlug = cleanUrl(notebookTitle)
     return `/notebooks/${notebookSlug.toLocaleLowerCase()}`
   },
-  showNote(notebookTitle: string, noteId: number) {
-    const notebookSlug = cleanUrl(notebookTitle)
+  showNote(notebookSlug: string, noteId: number) {
     return `/notebooks/${notebookSlug}/${noteId}`
   },
   createNote(notebookSlug: string) {

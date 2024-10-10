@@ -14,14 +14,15 @@ type NoteDataType = {
 }
 
 type NoteListProps = {
+  slug: string
   data: NoteDataType
 }
 
-const NoteCard = ({ data }: NoteListProps) => {
+const NoteCard = ({ slug, data }: NoteListProps) => {
   const { id, title } = data
   return (
     <div>
-      <Link href={paths.showNote(title, id)}>{title}</Link>
+      <Link href={paths.showNote(slug, id)}>{title}</Link>
     </div>
   )
 }

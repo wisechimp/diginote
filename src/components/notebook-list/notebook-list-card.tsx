@@ -16,10 +16,17 @@ type NotebooksListProps = {
 }
 
 const NotebooksListCard = ({ data }: NotebooksListProps) => {
-  const { title } = data
+  const { id, title } = data
   return (
     <div>
-      <Link href={paths.showNotebook(title)}>{title}</Link>
+      <Link
+        href={{
+          pathname: paths.showNotebook(title),
+          query: { notebookId: id },
+        }}
+      >
+        {title}
+      </Link>
     </div>
   )
 }
