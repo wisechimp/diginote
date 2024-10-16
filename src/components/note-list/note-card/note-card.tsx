@@ -13,12 +13,12 @@ type NoteDataType = {
   updated_at: number
 }
 
-type NoteListProps = {
+type NoteCardProps = {
   slug: string
   data: NoteDataType
 }
 
-const NoteCard = ({ slug, data }: NoteListProps) => {
+const NoteCard = ({ slug, data }: NoteCardProps) => {
   const { id, title } = data
   return (
     <div>
