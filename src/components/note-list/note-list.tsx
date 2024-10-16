@@ -1,5 +1,5 @@
 import notebook from "@/dummyData/notebook"
-import NoteCard from "./note-card"
+import NoteCard from "./note-card/note-card"
 
 type NoteListProps = {
   slug: string
