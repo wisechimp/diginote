@@ -1,4 +1,4 @@
-import NoteList from "@/components/note-list/note-list"
+import NoteList from "@/components/note-list/NoteList"
 import notebooks from "@/dummyData/notebooks"
 
 type NotebookPageProps = {
@@ -23,3 +23,4 @@ const NotebookPage = ({ params, searchParams }: NotebookPageProps) => {
 }
 
 export default NotebookPage
+s

@@ -1,4 +1,4 @@
-import NotebooksList from "@/components/notebook-list/notebook-list"
+import NotebooksList from "@/components/notebook-list/NotebookList"
 
 const NotebooksPage = () => {
   return (

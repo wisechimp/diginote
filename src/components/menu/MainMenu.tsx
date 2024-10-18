@@ -1,5 +1,5 @@
 import MenuData from "@/siteData/menu"
-import MenuItem from "./menu-item/menu-item"
+import MenuItem from "./menu-item/MenuItem"
 
 import * as styles from "./main-menu.module.css"
 
