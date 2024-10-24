@@ -2,7 +2,20 @@ const notebook = [
   {
     id: 1000,
     title: "Note 1",
-    content: "A note. Another note",
+    content: {
+      type: "doc",
+      content: [
+        {
+          type: "paragraph",
+          content: [
+            {
+              type: "text",
+              text: "A note. Another note",
+            },
+          ],
+        },
+      ],
+    },
     user_id: 200,
     notebook_id: 100,
     created_at: 70000,
@@ -11,7 +24,22 @@ const notebook = [
   {
     id: 1001,
     title: "Note 2",
-    content: "A note. Another note",
+    content: [
+      {
+        type: "doc",
+        content: [
+          {
+            type: "paragraph",
+            content: [
+              {
+                type: "text",
+                text: "A note. Another note",
+              },
+            ],
+          },
+        ],
+      },
+    ],
     user_id: 200,
     notebook_id: 100,
     created_at: 700000,
@@ -20,7 +48,22 @@ const notebook = [
   {
     id: 1002,
     title: "Note 3",
-    content: "A note. Another note",
+    content: [
+      {
+        type: "doc",
+        content: [
+          {
+            type: "paragraph",
+            content: [
+              {
+                type: "text",
+                text: "A note. Another note",
+              },
+            ],
+          },
+        ],
+      },
+    ],
     user_id: 200,
     notebook_id: 100,
     created_at: 7000000,

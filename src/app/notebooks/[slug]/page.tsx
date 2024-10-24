@@ -23,4 +23,3 @@ const NotebookPage = ({ params, searchParams }: NotebookPageProps) => {
 }
 
 export default NotebookPage
-s
