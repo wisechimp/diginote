@@ -1,12 +1,13 @@
-import notebooks from "@/dummyData/notebooks"
 import NotebooksListCard from "./notebook-list-card/NotebookListCard"
+import NotebooksDataType from "@/types/NotebookDataType"
 
-const fetchNotebooksData = () => {
-  return notebooks
+// This will be a promise when we're fetching the actual data
+type NotebooksListProps = {
+  fetchData: () => NotebooksDataType[]
 }
 
-const NotebooksList = () => {
-  const notebooksData = fetchNotebooksData()
+const NotebooksList = async ({ fetchData }: NotebooksListProps) => {
+  const notebooksData = await fetchData()
   return (
     <div>
       {notebooksData.map((notebook) => {

@@ -1,5 +1,8 @@
 import NoteList from "@/components/note-list/NoteList"
-import notebooks from "@/dummyData/notebooks"
+import {
+  fetchNotebook,
+  fetchNotebookFromNotebooks,
+} from "@/db/queries/notebooks"
 
 type NotebookPageProps = {
   params: {
@@ -12,12 +15,15 @@ type NotebookPageProps = {
 
 const NotebookPage = ({ params, searchParams }: NotebookPageProps) => {
   const notebookId = Number(searchParams.id)
-  const notebook = notebooks.find(({ id }) => id == notebookId)
+  const notebook = fetchNotebookFromNotebooks(notebookId)
 
   return (
     <div>
       <h1>{notebook?.title}</h1>
-      <NoteList slug={params.slug} notebookId={notebookId} />
+      <NoteList
+        slug={params.slug}
+        fetchData={() => fetchNotebook(notebookId)}
+      />
     </div>
   )
 }
