@@ -1,4 +1,4 @@
-import NoteList from "@/components/note-list/note-list"
+import NoteList from "@/components/note-list/NoteList"
 import notebooks from "@/dummyData/notebooks"
 
 type NotebookPageProps = {
@@ -6,12 +6,12 @@ type NotebookPageProps = {
     slug: string
   }
   searchParams: {
-    notebookId: number
+    id: string
   }
 }
 
 const NotebookPage = ({ params, searchParams }: NotebookPageProps) => {
-  const { notebookId } = searchParams
+  const notebookId = Number(searchParams.id)
   const notebook = notebooks.find(({ id }) => id == notebookId)
 
   return (

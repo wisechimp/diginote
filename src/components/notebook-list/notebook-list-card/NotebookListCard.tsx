@@ -22,7 +22,7 @@ const NotebooksListCard = ({ data }: NotebooksListProps) => {
       <Link
         href={{
           pathname: paths.showNotebook(title),
-          query: { notebookId: id },
+          query: { id: id },
         }}
       >
         {title}

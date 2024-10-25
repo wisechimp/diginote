@@ -1,5 +1,5 @@
 import notebooks from "@/dummyData/notebooks"
-import NotebooksListCard from "./notebook-list-card"
+import NotebooksListCard from "./notebook-list-card/NotebookListCard"
 
 const fetchNotebooksData = () => {
   return notebooks

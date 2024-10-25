@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import MainMenu from "@/components/menu/main-menu"
+import MainMenu from "@/components/menu/MainMenu"
 
 export const metadata: Metadata = {
   title: "Diginote",
