@@ -6,12 +6,12 @@ type NotebookPageProps = {
     slug: string
   }
   searchParams: {
-    id: number
+    id: string
   }
 }
 
 const NotebookPage = ({ params, searchParams }: NotebookPageProps) => {
-  const notebookId = searchParams.id
+  const notebookId = Number(searchParams.id)
   const notebook = notebooks.find(({ id }) => id == notebookId)
 
   return (

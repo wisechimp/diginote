@@ -11,15 +11,15 @@ import blanknote from "@/siteData/blank-note"
 
 type NotePageProps = {
   params: {
-    noteId: number
+    noteId: string
   }
 }
 
 const fetchNoteData = (noteId: number) => {
-  console.log("Note number: " + noteId)
-  const noteData = notebook.find((note) => (note.id = noteId))
-  if (noteData) {
-    return noteData
+  const fetchedNoteData = notebook.find((note) => note.id === noteId)
+  console.log(fetchedNoteData)
+  if (fetchedNoteData) {
+    return fetchedNoteData
   } else return blanknote
 }
 
@@ -32,8 +32,7 @@ const updateNoteData = (data: NoteDataType) => {
 }
 
 const NotePage = ({ params }: NotePageProps) => {
-  const { noteId } = params
-  const [noteData, setNoteData] = useState(fetchNoteData(noteId))
+  const noteData = fetchNoteData(Number(params.noteId))
   const { title, content } = noteData!
   const [noteContent, setNoteContent] = useState<JSONContent>(content)
   const [isEditing, setIsEditing] = useState(false)
@@ -43,14 +42,8 @@ const NotePage = ({ params }: NotePageProps) => {
   }
 
   const saveNote = (noteContent: JSONContent) => {
-    setNoteData((prevState) => {
-      const newNoteData = {
-        ...prevState,
-        content: noteContent,
-      }
-      updateNoteData(newNoteData)
-      return newNoteData
-    })
+    const newNoteData = { ...noteData, content: noteContent }
+    updateNoteData(newNoteData)
     return setIsEditing(!isEditing)
   }
 
