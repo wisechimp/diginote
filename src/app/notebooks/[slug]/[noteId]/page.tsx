@@ -5,9 +5,8 @@ import { JSONContent } from "@tiptap/core"
 
 import styles from "./note-page.module.css"
 import RichTextEditor from "@/components/rich-text-editor/RichTextEditor"
-import NoteDataType from "@/types/NoteDataType"
-import notebook from "@/dummyData/notebook"
-import blanknote from "@/siteData/blank-note"
+import { fetchNote } from "@/db/queries/notebooks"
+import { updateNote } from "@/actions"
 
 type NotePageProps = {
   params: {
@@ -15,24 +14,8 @@ type NotePageProps = {
   }
 }
 
-const fetchNoteData = (noteId: number) => {
-  const fetchedNoteData = notebook.find((note) => note.id === noteId)
-  console.log(fetchedNoteData)
-  if (fetchedNoteData) {
-    return fetchedNoteData
-  } else return blanknote
-}
-
-const updateNoteData = (data: NoteDataType) => {
-  console.log(
-    `We're sending data to supabase for note ${data.id}: ${JSON.stringify(
-      data
-    )}`
-  )
-}
-
 const NotePage = ({ params }: NotePageProps) => {
-  const noteData = fetchNoteData(Number(params.noteId))
+  const noteData = fetchNote(Number(params.noteId))
   const { title, content } = noteData!
   const [noteContent, setNoteContent] = useState<JSONContent>(content)
   const [isEditing, setIsEditing] = useState(false)
@@ -43,7 +26,7 @@ const NotePage = ({ params }: NotePageProps) => {
 
   const saveNote = (noteContent: JSONContent) => {
     const newNoteData = { ...noteData, content: noteContent }
-    updateNoteData(newNoteData)
+    updateNote(newNoteData)
     return setIsEditing(!isEditing)
   }
 
