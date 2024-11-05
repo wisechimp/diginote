@@ -1,3 +1,4 @@
+import { login, signup } from "./authentication"
 import updateNote from "./update-note"
 
-export { updateNote }
+export { login, signup, updateNote }
