@@ -1,3 +1,4 @@
+import { signout } from "@/actions"
 import createClient from "@/supabase/server"
 import { redirect } from "next/navigation"
 
@@ -15,6 +16,9 @@ const ProfilePage = async () => {
         How about setting up a user name so you receive a less robotic welcome
         message!?!
       </p>
+      <form>
+        <button onClick={signout}>Sign Out</button>
+      </form>
     </div>
   )
 }
